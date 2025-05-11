@@ -1,16 +1,13 @@
-name: Publish to npm
+name: Publish to npm (via Yarn)
 
 on:
   push:
     tags:
-      - 'v*.*.*'  # triggers only on tags like v1.0.0
+      - 'v*.*.*'  # triggers on version tags like v1.2.3
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write  # for npm 2FA if needed
 
     steps:
       - uses: actions/checkout@v3
@@ -20,8 +17,8 @@ jobs:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org/'
 
-      - run: npm ci
+      - run: yarn install
 
-      - run: npm publish
+      - run: yarn publish --non-interactive
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
