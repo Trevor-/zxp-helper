@@ -1,9 +1,9 @@
 {
-  "name": "zxp-provider",
-  "version": "2.0.0",
-  "description": "Provides the ZXPSignCmd executable for signing Adobe extensions.",
+  "name": "zxp-signer",
+  "version": "1.0.0",
+  "description": "Provides the ZXPSignCmd executable for signing Adobe extensions. Updated fork of zxp-provider",
   "main": "lib/zxp.js",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "eslint ./lib",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
@@ -21,8 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codearoni/zxp-provider.git"
+    "url": "https://github.com/Trevor-/zxp-signer.git"
   },
+  "bugs": {
+    "url": "https://github.com/Trevor-/zxp-signer/issues"
+  },
+  "homepage": "https://github.com/Trevor-/zxp-signer#readme",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
