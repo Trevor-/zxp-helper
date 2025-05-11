@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Provides the ZXPSignCmd executable for signing Adobe extensions.",
   "main": "lib/zxp.js",
+  "private": true,
   "scripts": {
     "lint": "eslint ./lib",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
